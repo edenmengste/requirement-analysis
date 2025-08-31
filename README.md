@@ -28,3 +28,28 @@ Requirement Analysis is critical in the Software Development Life Cycle (SDLC) f
 3.  **Facilitates Better Planning and Resource Allocation:**
     *   **Description:** Detailed and well-understood requirements provide the necessary foundation for accurate project planning, including estimating timelines, budgeting, and allocating resources (human and technical). When requirements are clear, it's easier to break down tasks, identify dependencies, and manage the project scope.
     *   **Impact:** This leads to more realistic project schedules and budgets, helping to avoid overruns and ensuring that the right resources are available at the right time. It empowers project managers to make informed decisions and track progress effectively.
+
+
+## Key Activities in Requirement Analysis
+
+Requirement Analysis involves several interconnected activities, each crucial for defining a successful software product:
+
+### 1. Requirement Gathering
+*   **Description:** This initial activity focuses on collecting raw information about the project's goals, scope, and user needs from various sources. It's about understanding the "what" and "why" of the system from different perspectives.
+*   **Methods:** This often involves techniques like brainstorming, surveys, analyzing existing documentation, and studying current systems. The goal is to cast a wide net to capture all potential requirements before refining them.
+
+### 2. Requirement Elicitation
+*   **Description:** Elicitation is a more interactive process of actively drawing out detailed requirements from stakeholders. It's about getting specific, actionable information through direct communication.
+*   **Methods:** Common techniques include interviews (structured and unstructured), workshops, focus groups, user stories, use cases, and prototyping. The aim is to clarify vague statements and uncover hidden needs.
+
+### 3. Requirement Documentation
+*   **Description:** Once requirements are gathered and elicited, they need to be formally recorded in a clear, consistent, and unambiguous manner. This creates a single source of truth for all project stakeholders.
+*   **Artifacts:** This activity produces documents such as Software Requirement Specifications (SRS), Use Case Diagrams, User Stories, and Functional Requirement Documents (FRD). The documentation ensures that everyone understands the agreed-upon functionalities.
+
+### 4. Requirement Analysis and Modeling
+*   **Description:** This activity involves studying the documented requirements in detail to identify relationships, dependencies, conflicts, and ambiguities. It's about transforming raw information into a structured and understandable form. Modeling helps visualize the system and its components.
+*   **Techniques:** This includes categorizing requirements (functional, non-functional), prioritizing them, creating data flow diagrams (DFDs), entity-relationship diagrams (ERDs), process models, and state diagrams. The goal is to ensure requirements are complete, consistent, and feasible.
+
+### 5. Requirement Validation
+*   **Description:** The final critical step is to verify that the documented requirements accurately reflect the stakeholders' true needs and that they are achievable within the project's constraints (time, budget, technology). It's about confirming that the right product will be built.
+*   **Methods:** This often involves reviews, walkthroughs, inspections, and formal sign-offs by stakeholders. Prototyping and simulations can also be used to validate assumptions and gain early feedback. The aim is to get stakeholder agreement and prevent costly changes later in the development cycle.
