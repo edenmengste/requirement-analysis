@@ -108,3 +108,28 @@ In software development, requirements are broadly categorized into two main type
     *   **Data Archival & Analytics:**
         *   The system shall effectively archive old booking data in Cassandra to prevent performance degradation on the primary booking database.
         *   The integration with Hadoop via Apache Streaming shall enable large-scale data analysis for business intelligence and audience categorization.
+        * 
+
+## Use Case Diagrams
+
+### What are Use Case Diagrams?
+
+A Use Case Diagram is a behavioral diagram from the Unified Modeling Language (UML) that shows how users interact with a system. It provides a high-level view of the system's functionality by illustrating the different ways users (called "actors") can use the system and the functions (called "use cases") the system provides.
+
+*   **Actors:** Represent external entities (people, other systems, or hardware) that interact with the system. They are typically depicted as stick figures.
+*   **Use Cases:** Represent a specific function or a set of related functions that the system performs in response to an actor's request. They are typically depicted as ovals.
+*   **Relationships:** Lines connect actors to use cases, showing that an actor participates in a use case. Other relationships like `<<include>>` (one use case is a part of another) and `<<extend>>` (one use case conditionally adds functionality to another) can also be shown.
+
+### Benefits of Use Case Diagrams:
+
+*   **Clarifies System Boundaries:** Clearly defines what the system does and does not do, helping to manage scope.
+*   **Facilitates Communication:** Provides a simple, understandable visual representation that can be easily shared and discussed with both technical and non-technical stakeholders.
+*   **Identifies Functionality:** Helps in identifying and organizing the high-level functional requirements of the system early in the development process.
+*   **User-Centric View:** Focuses on how users interact with the system, ensuring that the system addresses their needs.
+*   **Foundation for Other Models:** Can serve as a starting point for more detailed analysis and design models, such as sequence diagrams or activity diagrams.
+
+### Example Use Case Diagram for a Booking System
+
+Below is the Use Case Diagram for our booking system, illustrating the key actors and their interactions with the system's functionalities.
+
+![Booking System Use Case Diagram](images/alx-booking-uc.png)
