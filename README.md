@@ -53,3 +53,58 @@ Requirement Analysis involves several interconnected activities, each crucial fo
 ### 5. Requirement Validation
 *   **Description:** The final critical step is to verify that the documented requirements accurately reflect the stakeholders' true needs and that they are achievable within the project's constraints (time, budget, technology). It's about confirming that the right product will be built.
 *   **Methods:** This often involves reviews, walkthroughs, inspections, and formal sign-offs by stakeholders. Prototyping and simulations can also be used to validate assumptions and gain early feedback. The aim is to get stakeholder agreement and prevent costly changes later in the development cycle.
+---
+
+## Types of Requirements
+
+In software development, requirements are broadly categorized into two main types: Functional and Non-functional. Understanding the distinction between them is crucial for building a complete and effective system.
+
+### Functional Requirements
+
+*   **Definition:** Functional requirements specify *what* the system must do. They describe the behaviors or functions of the software, detailing how the system should react to specific inputs, how it should behave in particular situations, and what services it should provide to the users. Essentially, they are the features of the system.
+
+*   **Examples for a Hotel Booking Management Project (based on the provided architecture):**
+    *   **Hotel Management Service:**
+        *   The system shall allow hotel managers to create, update, and delete hotel information (e.g., name, address, description, amenities).
+        *   The system shall enable hotel managers to manage room inventory, including room types, availability, and pricing.
+        *   The system shall allow hotel managers to view and manage bookings specific to their hotel.
+    *   **Customer Service (Search + Booking):**
+        *   The system shall allow customers to search for hotels based on location, dates, number of guests, and specific criteria (e.g., price range, amenities).
+        *   The system shall enable customers to view detailed information about a hotel, including photos, descriptions, reviews, and available rooms.
+        *   The system shall allow customers to select a room, specify check-in/check-out dates, and book a reservation.
+        *   The system shall integrate with a third-party payment service to process booking payments.
+        *   The system shall send booking confirmations to customers via email or in-app notification.
+    *   **View Booking Service:**
+        *   The system shall allow customers to view their past and current booking details.
+        *   The system shall enable hotel managers to view all bookings for their property.
+        *   The system shall allow customers to cancel or modify their existing bookings (subject to hotel policies).
+
+### Non-functional Requirements
+
+*   **Definition:** Non-functional requirements specify *how* the system should perform a particular function. They describe the quality attributes of the system and the constraints under which it must operate. These requirements are not about the functionality itself, but about the system's performance, usability, security, reliability, scalability, etc.
+
+*   **Examples for a Hotel Booking Management Project (based on the provided architecture):**
+    *   **Performance:**
+        *   The customer search service, leveraging Elasticsearch, shall return search results within 500 milliseconds for 95% of queries, even with a high volume of concurrent users.
+        *   The booking service, utilizing Redis for caching, shall confirm a booking within 2 seconds.
+    *   **Scalability:**
+        *   The system's microservices architecture and load balancing (e.g., for Hotel Service, Customer Service, View Booking Service) shall allow for horizontal scaling to handle increasing user traffic (e.g., millions of users like Airbnb, OYO).
+        *   The database clusters (Master-Slave for Hotel DB, Cassandra for archival) shall be able to accommodate a massive and ever-growing amount of data while maintaining query performance.
+    *   **Reliability/Availability:**
+        *   The system shall maintain 99.99% uptime for core booking functionalities, minimizing service interruptions.
+        *   The master-slave database architecture for Hotel DB shall ensure high availability and data redundancy.
+    *   **Security:**
+        *   All user data, including personal information and payment details, shall be encrypted in transit and at rest.
+        *   The payment integration shall adhere to PCI DSS compliance standards.
+    *   **Data Consistency:**
+        *   Data synchronization between the Master DB and Slave DB in the Hotel Management Service shall ensure data consistency for read operations.
+        *   The messaging queue system (Kafka, RabbitMQ) shall ensure reliable data propagation across services (e.g., from Hotel Service updates to Elastic Search for customer searches, or booking changes to Cassandra for archival).
+    *   **Usability:**
+        *   The customer-facing application shall provide an intuitive and responsive user interface for searching, booking, and managing reservations.
+        *   The hotel manager portal shall be user-friendly and efficient for managing hotel information and bookings.
+    *   **Maintainability:**
+        *   The microservices architecture shall facilitate independent development, deployment, and scaling of individual services, simplifying maintenance and updates.
+        *   The use of technologies like Redis and Cassandra should be well-documented to ensure ease of maintenance and troubleshooting.
+    *   **Data Archival & Analytics:**
+        *   The system shall effectively archive old booking data in Cassandra to prevent performance degradation on the primary booking database.
+        *   The integration with Hadoop via Apache Streaming shall enable large-scale data analysis for business intelligence and audience categorization.
