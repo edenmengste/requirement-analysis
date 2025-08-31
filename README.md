@@ -134,3 +134,52 @@ Below is the Use Case Diagram for our booking system, illustrating the key actor
 
 check out the image:
 https://drive.google.com/file/d/1RJysxwvbP7s74AcQuvJZlzYh4RBTa5AQ/view?usp=sharing
+
+##Acceptance Criteria
+
+Acceptance Criteria are crucial in Requirement Analysis because they provide clear, unambiguous conditions that a software feature must meet to be considered complete and correct. They bridge the gap between abstract requirements and tangible, testable outcomes.
+
+*   **Defines "Done":** Acceptance Criteria clearly state what needs to be achieved for a feature to be accepted by stakeholders. This eliminates ambiguity and ensures everyone has the same understanding of a successful outcome.
+*   **Guides Development and Testing:** For developers, they provide precise targets for implementation. For testers, they form the basis for writing test cases, ensuring that all aspects of the requirement are validated.
+*   **Reduces Misunderstandings:** By detailing the expected behavior in specific, testable terms, they minimize misinterpretations between product owners, developers, and testers.
+*   **Enhances Quality:** They push for a more thorough analysis of requirements upfront, leading to higher quality software that truly meets user needs.
+*   **Facilitates Communication:** They serve as a common language for all team members and stakeholders to discuss and agree upon the functionality of a feature.
+
+### Example of Acceptance Criteria for a Checkout Feature (Booking Management System)
+
+Let's consider a "Checkout" feature in our booking management system. This feature would handle the final steps of confirming a booking and processing payment.
+
+**Feature:** `User checks out a booking`
+
+**Acceptance Criteria:**
+
+*   **Scenario 1: Successful Payment and Booking Confirmation**
+    *   **Given** the user has selected a service and is on the checkout page with valid booking details (service, dates, price).
+    *   **And** the user provides valid payment information (credit card details or selected payment method).
+    *   **When** the user clicks the "Confirm Booking & Pay" button.
+    *   **Then** the system shall process the payment successfully via the Payment Gateway.
+    *   **And** the system shall mark the booking as "Confirmed" in the database.
+    *   **And** the system shall send an email confirmation to the user with booking details.
+    *   **And** the system shall redirect the user to a "Booking Confirmation" page displaying a unique booking ID.
+
+*   **Scenario 2: Invalid Payment Information**
+    *   **Given** the user is on the checkout page with valid booking details.
+    *   **And** the user provides invalid payment information (e.g., incorrect card number, expired date, insufficient funds).
+    *   **When** the user clicks the "Confirm Booking & Pay" button.
+    *   **Then** the system shall display an error message indicating the payment failure (e.g., "Payment failed. Please check your details or try another method.").
+    *   **And** the system shall not process the payment.
+    *   **And** the booking status shall remain "Pending" or "Unconfirmed".
+
+*   **Scenario 3: Booking Already Taken (Concurrency)**
+    *   **Given** the user is on the checkout page with a selected service.
+    *   **And** another user simultaneously completes a booking for the exact same service/time slot.
+    *   **When** the first user clicks the "Confirm Booking & Pay" button.
+    *   **Then** the system shall inform the user that the selected slot is no longer available.
+    *   **And** the system shall suggest alternative available slots or direct them back to the search results.
+    *   **And** the system shall not process the payment or create a booking for the first user.
+
+*   **Scenario 4: User Navigates Away During Payment Process**
+    *   **Given** the user has initiated the payment process but has not yet received a confirmation.
+    *   **When** the user closes the browser or navigates away from the checkout page.
+    *   **Then** the system shall handle the incomplete transaction (e.g., cancel the pending payment, mark the slot as available again after a timeout).
+    *   **And** no booking shall be created if the payment was not successfully confirmed.
