@@ -63,7 +63,7 @@ In software development, requirements are broadly categorized into two main type
 
 *   **Definition:** Functional requirements specify *what* the system must do. They describe the behaviors or functions of the software, detailing how the system should react to specific inputs, how it should behave in particular situations, and what services it should provide to the users. Essentially, they are the features of the system.
 
-*   **Examples for a Hotel Booking Management Project (based on the provided architecture):**
+*   **Examples for a Hotel Booking Management Project:**
     *   **Hotel Management Service:**
         *   The system shall allow hotel managers to create, update, and delete hotel information (e.g., name, address, description, amenities).
         *   The system shall enable hotel managers to manage room inventory, including room types, availability, and pricing.
@@ -83,7 +83,7 @@ In software development, requirements are broadly categorized into two main type
 
 *   **Definition:** Non-functional requirements specify *how* the system should perform a particular function. They describe the quality attributes of the system and the constraints under which it must operate. These requirements are not about the functionality itself, but about the system's performance, usability, security, reliability, scalability, etc.
 
-*   **Examples for a Hotel Booking Management Project (based on the provided architecture):**
+*   **Examples for a Hotel Booking Management Project:**
     *   **Performance:**
         *   The customer search service, leveraging Elasticsearch, shall return search results within 500 milliseconds for 95% of queries, even with a high volume of concurrent users.
         *   The booking service, utilizing Redis for caching, shall confirm a booking within 2 seconds.
